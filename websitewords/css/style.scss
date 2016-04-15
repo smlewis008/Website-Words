@@ -1,5 +1,9 @@
-// import files 
-//@import 'stylesubpage.scss';
+// Import files 
+//@import '_tabletsmall.scss';
+//@import '_tabletlarge.scss';
+//@import '_screensmall.scss';
+@import '_keyframes.scss';
+
 
 // Media query
 $mobile-large: 320px;
@@ -7,70 +11,24 @@ $tablet-small: 480px;
 $tablet-large: 768px;
 $screen-small: 1024px;
 
-// Colors
-$white: #fff;
-$lightgrey:#7a7a7a;
-$black:#000;
+// Color Variables
+$basewhite: #fff;
+$background:#d7d7d7;
+$slimgrey: #818181;
+$baseblack:#000;
+$tan:#c4a86b;
+$contactbkgr: #F6F6F6;
+$contacth:#303030;
+$contactp:#818181;
 
-//keyframes
-/* Home Page*/
-@keyframes homeslide-up {
-  from {
-    margin-top: 7%;
-    opacity:0;
-  }
 
-  to {
-    margin-top: 0%;
-    opacity:1;
-  }
-}
-@keyframes typing {
-  from {
-    width:0;
-    opacity:0;  
-  }
-  to {
-    width: 16.3em;
-    opacity:1;  
-  }
-}
-/* White Section*/
-@keyframes slideup {
-  from {
-    margin-top: 100%;
-    width: 100%; 
-  }
+// Font Variables
+$ubuntu-font-stack: 'Ubuntu', sans-serif !default;
+$roboto-font-stack: 'Roboto', sans-serif !default;
 
-  to {
-    margin-top: 0%;
-    width: 100%;
-  }
-}
-/* Black Box*/
-@keyframes slidein {
-  from {
-    margin-left: 40%;
-    width: 300%; 
-  }
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-@keyframes slideintwo {
-  from {
-    margin-left: 40%;
-    width: 200%; 
-  }
 
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
+// Base CSS
 body{
     width: 100%;
     height: 100%;
@@ -81,6 +39,8 @@ h1{
 a{
     text-decoration: none;
 }
+
+
 //320 size
 @media screen and (min-width: $mobile-large) {
 
@@ -90,8 +50,13 @@ a{
     margin-top: -20px;
     background-color: blue;
 }
-  
+#navigation{
+       display: none; 
+}     
 #sideView{
+       display: block; 
+} 
+#mobile{
     list-style: none;
     background: #111;
     width: 100%;
@@ -101,7 +66,7 @@ a{
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 0;
+    z-index: 2;
     color: #000;
     background-color: #fff;
     display:block;
@@ -110,13 +75,19 @@ a{
     .navHolder{
         width: 123px;
         height: auto;
-        background-color: $white;
+        background-color: $basewhite;
+        margin-top: 45px;
         #logoHolder{
             width: 100%;
             height: auto;
             padding: 18px 0px;
         }
-        #navi{
+    }
+    #navmobLinks{
+        width: 123px;
+        height: auto;
+        background-color: $basewhite;
+        #mobilelink{
             width: 100%;
             list-style: none;
             padding: 0px 0px 0px 0px;
@@ -126,7 +97,7 @@ a{
                 text-transform: uppercase;
                 padding: 10px 0px;
                 line-height: 49px;
-                color: $black;
+                color: $baseblack;
                 font-size: 13px;
                 letter-spacing: 0.02em;
                 font-weight: bold;
@@ -144,16 +115,52 @@ a{
             }
         }
     }
+    #navmobileSoc{
+        width: 123px;
+        height: auto;
+        background-color: $basewhite;
+        margin-top: 70px;
+        #social{
+            width: 100%;
+            height: 102px;
+            list-style: none;
+            padding: 0px 0px 0px 0px;
+            text-align: center;
+            li{
+                width: 30%;
+                background-color: none;
+                height: auto;
+                display: inline;
+                margin-right: 5px;
+                li a{
+                    font-family: 'Ubuntu', sans-serif;
+                    text-transform: uppercase;
+                    padding: 10px 0px;
+                    display: inline;
+                    float: left;
+                    width: 17%;
+                    background-color: none;
+                    margin-left: 3px;
+                      
+                }
+            
+            }
+        }
+    }
+    
+    img {
+        width:14%;
+    } 
     .nav-item{
 //        background-color: aqua;
         width: 123px;
     }
 }
    
-#sideView .nav-trigger {
+#mobile .nav-trigger {
     position: absolute;
     clip: rect(0, 0, 0, 0);
-    background-color: green;
+    background-color: none;
 }
     
 label[for="nav-trigger"] {
@@ -161,7 +168,7 @@ label[for="nav-trigger"] {
     top: 15px;
     left: 15px;
     z-index: 2;
-    background-color: red;
+    background-color: none;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -178,11 +185,11 @@ label[for="nav-trigger"] {
 .nav-trigger:checked ~ .mainView {
     left: 200px;
     box-shadow: none;
-    background-color: blue;
+    background-color: $basewhite;
 }
 .nav-trigger + label, .mainView {
     transition: left 0.2s;
-    background-color: blue;
+    background-color: $basewhite;
 }
 .logoTitle h1{
     font-family: 'Ubuntu', sans-serif;
@@ -191,48 +198,26 @@ label[for="nav-trigger"] {
     letter-spacing: .05em;
     text-transform: uppercase;
     text-align: center;
-    color:$black;
+    color:$baseblack;
     text-decoration: none;
         
 }    
-//.logoTitle h1:hover{
-//    font-family: 'Ubuntu', sans-serif;
-//    font-size: 2em;
-//    font-weight: 700;
-//    letter-spacing: .05em;
-//    text-transform: uppercase;
-//    text-align: center;
-//    text-decoration: none;
-//    color:#723a19;
-//}
-
-li a{
-    font-family: 'Ubuntu', sans-serif;
-    text-transform: uppercase;
-    padding: 10px 0px;
-    line-height: 49px;
-    color: $black;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    font-weight: bold;
-    text-align: center;
-}
-li a:hover{
-    text-decoration: none;
-    background-color: #AD310B;
-    -webkit-transition: background-color 1000ms linear;
-    -moz-transition: background-color 1000ms linear;
-    -o-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
-}    
+   
 #navigation{
     display:none;
 }
 /* End of the Navigation Section */
 /* End of the Navigation Section */ 
 
-/* Main website */     
+
+    
+    
+/* 
+* 
+*    
+*   Main website 
+*
+* **************************/     
 .mainView{
     width: 100%;
     height: 700px;
@@ -248,20 +233,7 @@ li a:hover{
                       rgb(160,216,239) 100%);
     background-size: 200%;    
 }    
-//#sideView{
-//    width:100%;
-//    height:auto;
-//}
-//#mainView{
-//    width:100%;
-//    height:555px;
-//    background-image: url("../img/light.jpeg");
-//    -webkit-background-size: cover;
-//    -moz-background-size: cover;
-//    -o-background-size: cover;
-//    background-size: cover;
-//}
-    
+  
 #containerMain{
     width:100%;
     min-height: 100%;
@@ -291,7 +263,7 @@ li a:hover{
             line-height: 2.2em;
             text-transform: uppercase;
             text-align: center;
-            color: $white;
+            color: $basewhite;
             animation: 4s homeslide-up;
             margin: 0%;
     }
@@ -302,7 +274,7 @@ li a:hover{
         letter-spacing: .05em;
         text-transform: uppercase;
         text-align: center;
-        color: $white;
+        color: $basewhite;
         animation: 4s homeslide-up;
         margin: 0%;
         white-space:nowrap;
@@ -310,8 +282,14 @@ li a:hover{
     }
 
 } 
-   
-//indexpage
+
+    
+
+    
+/*     
+*   index page
+* **************************/     
+
 #topText{
     width: 80%;
     position:relative;
@@ -320,7 +298,7 @@ li a:hover{
     h1{
         font-family: 'Ubuntu', sans-serif;
         font-size: 25px;
-        color: $white;
+        color: $basewhite;
         text-transform: uppercase;
         letter-spacing: 3px;
     }
@@ -330,7 +308,7 @@ li a:hover{
     position:relative;
     top:190px;
     left:70px;
-    border-top: 1px solid $lightgrey;
+    border-top: 1px solid $slimgrey;
 //    background-color: aqua;
     ul{
        li{
@@ -338,7 +316,7 @@ li a:hover{
            list-style-type: none;
            font-family: 'Ubuntu', sans-serif;
            font-size: 15px;
-           color: $white;
+           color: $basewhite;
            text-transform: uppercase;
            img{
                width:32%;
@@ -349,7 +327,18 @@ li a:hover{
     
 }
     
-/* Subpages of the website info*/   
+
+    
+    
+    
+/* Subpages of the website info*/  
+    
+
+    
+    
+/*     
+*   about page
+* **************************/       
 #subcontainerMain{
     width:100%;
     min-height: 100%;
@@ -369,6 +358,7 @@ li a:hover{
     }
     .rows,#row{
         position: relative;
+        width: 100%;
         left: 0%;
         background-color: brown;
         height: auto;
@@ -397,8 +387,8 @@ li a:hover{
         width: 100%;
         height: 300px;
         margin-top: -20px;
-        background-color: $white;
-        color:$black;
+        background-color: $basewhite;
+        color:$baseblack;
         padding: 15px 22px 0px 33px;
         -webkit-order: 2;
         order: 2;
@@ -435,8 +425,8 @@ li a:hover{
         width: 100%;
         height: 300px;
         margin-top: -20px;
-        background-color: $white;
-        color:$black;
+        background-color: $basewhite;
+        color:$baseblack;
         padding: 15px 22px 0px 33px;
         -webkit-order: 4;
         order: 4;
@@ -461,10 +451,10 @@ li a:hover{
 #blacksectionOne,#blacksectionTwo{
     width: 100%;
     height: 300px;
-    background-color: $black;
+    background-color: $baseblack;
     margin-top: -20px;
     padding: 45px 22px 10px 33px;
-    color: $white;
+    color: $basewhite;
 }
 #blacksectionTwo{
     height: 700px;
@@ -476,7 +466,7 @@ li a:hover{
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 0px 0px 33px 0px;
     }
     p{
@@ -485,7 +475,7 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     }        
 }
 .blktopblockB{
@@ -495,14 +485,14 @@ li a:hover{
     width: 100%;
     height:auto;
     padding: 45px 22px 10px 0px;
-    color: $white;
+    color: $basewhite;
     h2{
         font-family: 'Ubuntu', sans-serif;
         font-size: 1.7em;
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 0px 0px 33px 0px;
     }
     p{
@@ -511,21 +501,21 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     }        
 }     
 #blkbottomTwoB{
     width: 100%;
     height:auto;
     padding: 45px 22px 10px 0px;
-    color: $white;
+    color: $basewhite;
     h2{
         font-family: 'Ubuntu', sans-serif;
         font-size: 1.7em;
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 0px 0px 33px 0px;
     }
     p{
@@ -534,18 +524,271 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     }        
 }
           
 }
-/* End of infopage */  
+/* End of About page */  
 
-/* servicepage */ 
+    
+    
+    
+    
+/*     
+*   services page
+* **************************/       
+
+#blockCreate, #blockList{
+    width: 100%;
+    height:680px;
+    background-color: $contactbkgr;
+    padding: 45px 22px 15px 33px;
+    h1{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $slimgrey;
+        padding: 0px 0px 33px 0px;
+    }
+    h2{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.3em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        line-height: 1.44em;
+        text-transform: none;
+        color: $slimgrey;
+        padding: 0px 0px 33px 0px;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 2em;
+        letter-spacing: .025em;
+        color: $slimgrey;
+    }
+    h3{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: $slimgrey;
+        padding: 0px 0px 17px 0px;
+        text-transform: none;
+
+    }
+    ul.tagFirst, ul.tagLast{
+        color: $slimgrey;
+        margin-bottom: 10px;
+        list-style: none;
+        li {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1em;
+            font-weight: 200;
+            line-height: 1.64em;
+            letter-spacing: .025em;
+            color: $slimgrey;
+            list-style: none;
+            margin: 10px 0px;
+        }
+    }
+    ul.tagLast{
+        li a {
+            
+        }
+    }
+}
+#blockList{
+    height:600px;
+}
+#blockWA{
+    width: 100%;
+    height: auto;
+    background-image: url("../img/hand.jpg");
+    background-size: 100% 100%;
+//    -webkit-background-size: cover;
+//    -moz-background-size: cover;
+//    -o-background-size: cover;
+//    background-size: cover;
+} 
+#blockWin,#blockAccord{
+    width: 100%;
+    height:540px;
+//    background-color: pink;
+    padding: 95px 22px 15px 33px;
+    h1{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        text-align: center;
+        color: $basewhite;
+        padding: 0px 0px 33px 0px;
+    }
+    h2{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.2em;
+        font-weight: 300;
+        line-height: 1.64em;
+        text-align: center;
+        letter-spacing: .025em;
+        color: $basewhite;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.64em;
+        text-align: center;
+        letter-spacing: .025em;
+        color: $basewhite;
+    }
+    
+}
+//input[type="button"] .btnwin {
+//        -webkit-border-radius: 0;
+//        -moz-border-radius: 0;
+//        border-radius: 0px;
+//        font-family: Arial;
+//        color: #ffffff;
+//        font-size: 20px;
+//        background: #3498db;
+//        padding: 10px 20px 10px 20px;
+//        text-decoration: none;
+//        .btnwin:hover {
+//            background: #3cb0fd;
+//            text-decoration: none;
+//            }
+//}    
+#blockAccord{
+    width: 100%;
+    height:740px;
+//    background-color: deeppink;
+    padding: 45px 22px 15px 33px;   
+}
+#acc{
+    list-style: none;
+    border: 2px solid rgb(255, 255, 255);
+    padding-left: 0px;
+}
+#acc li{
+    width: 100%;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    background-color: transparent;
+}    
+   
+#acc li a{
+    list-style: none;
+    color:$basewhite;
+         
+}
+.secText{
+    padding: 0px 23px;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 2px solid #fff;
+    border-top: none;
+}     
+#blockColorA, #blockColorB, #blockColorC{
+    width: 100%;
+    height: 440px;
+    background-color: #000;
+    padding: 95px 22px 15px 33px;
+    color: #fff;
+    h1{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $basewhite;
+        padding: 0px 0px 33px 0px;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.64em;
+        letter-spacing: .025em;
+        color: $basewhite;
+    } 
+}
+#blockColorB, #blockColorC{
+    background-color: $slimgrey;
+}
+#blockColorC{
+    background-color: $tan;
+}  
+#blockAccord ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+#blockAccord ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+//ul.tab li a {
+//    display: inline-block;
+//    color: black;
+//    text-align: center;
+//    padding: 14px 16px;
+//    text-decoration: none;
+//    transition: 0.3s;
+//    font-size: 17px;
+//}
+
+/* Change background color of links on hover */
+//ul.tab li a:hover {
+//    background-color: #ddd;
+//}
+
+/* Create an active/current tablink class */
+#blockAccord ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} 
+/* End of Servicepage */    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+/*     
+*   info page
+* **************************/   
 #whiteSection{
     width: 100%;
     height:540px;
-    background-color: $white;
+    background-color: $basewhite;
     padding: 45px 22px 15px 33px;
 }
 .blockrow{
@@ -561,7 +804,7 @@ li a:hover{
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $black;
+        color: $baseblack;
         padding: 30px 0px 33px 10px;
     }
     p{
@@ -570,7 +813,7 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $black;
+        color: $baseblack;
         animation-duration: 2s;
         animation-name: slideup;
     } 
@@ -591,7 +834,7 @@ li a:hover{
     width: 300px;
     height:auto;
     padding: 4px 0px 13px 14px;
-    background-color: $black;
+    background-color: $baseblack;
     margin: 0 auto;
     h1{
         font-family: 'Ubuntu', sans-serif;
@@ -599,7 +842,7 @@ li a:hover{
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 30px 0px 33px 10px;
     }
     p{
@@ -608,9 +851,163 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     } 
 }    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+/*     
+*   contact page
+* **************************/       
+#locPic {
+    width: 100%;
+    height: 300px;
+    background-image: url("../img/building.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+    
+#contactA{
+    width: 100%;
+    height: 270px;
+    background-color: $contactbkgr;
+    padding: 13px 0px 0px 0px;
+}
+#contactA h1, #contactA h2 {
+    font-size: 1.5em;
+    line-height: 1.38em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+    color: $contacth;
+    margin-bottom: 10px;
+}
+#contactA h2 {
+    font-size: 1.2em;
+    line-height: 1.38em;
+    text-transform: uppercase;
+    text-align: center;
+//    padding: 0px 0px 0px 63px;
+    margin-top: 50px;
+} 
+#contactA p{
+    font-size: 1em;
+    font-family: $roboto-font-stack;
+    font-weight: 100;
+    line-height: 2.2em;
+    text-align: center;
+    color: $contactp;
+//    padding: 0px 0px 0px 63px;
+    margin-top: 5px;
+}    
+#contactB{
+    width: 100%;
+    height: 661px;
+    background-color: $contactbkgr;
+}
+#contactB h2 {
+    font-size: 1.2em;
+    line-height: 1.38em;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 0px 0px 0px 63px;
+    margin-top: 50px;
+}
+#contactForm{
+    width:80%;
+    height:577px;
+    margin: 0 auto;
+//    background-color: chartreuse;
+}    
+form{
+    margin: 0 auto;
+}
+input[type="text"] {
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 15px 12px;
+    border: 0;
+    outline: 0;
+    resize: none;
+    font-size: 13px;
+    line-height: 17px;
+    background-color: #fff;
+    color: $contactp;
+    font-family: $roboto-font-stack;
+    font-weight: 400;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#Message{
+    width: 100%;
+    height: 200px;
+    margin: 0 0 20px 0;
+    padding: 15px 12px;
+    border: 0;
+    outline: 0;
+    resize: none;
+    font-size: 13px;
+    line-height: 17px;
+    background-color: #fff;
+    color: #818181;
+    font-family: $roboto-font-stack;
+    font-weight: 400;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}    
+#contbutton{
+    display: inline-block;
+    width: auto;
+    height: 39px;
+    line-height: 39px;
+    margin: 0;
+    padding: 0 0px 0px 0px;
+    border: 2px solid #303030;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    text-align: center;
+    color: #303030;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    outline: 0;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -o-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: none;
+    background-color: transparent;
+}    
+    
+    
+#googleMap{
+    width: 100%;
+    height: 300px;
+    background-color: brown;
+}    
+    
+
+
+
 
 }//end of media query 
 
@@ -618,16 +1015,11 @@ li a:hover{
 
 
 
-
-
-
-
-
-// mobile phone 6
 @media screen and (min-width: $tablet-small) {
 #wrapper{
    height: 634px;
 }
+   
 .mainView{
     width:100%;
     min-height: 100%;
@@ -644,6 +1036,7 @@ li a:hover{
         color:aquamarine;
     }
 }
+    
 
 /* Subpages of the website */   
 #subcontainerMain{
@@ -683,8 +1076,8 @@ li a:hover{
         width: 100%;
         height: 300px;
         margin-top: -20px;
-        background-color: $white;
-        color:$black;
+        background-color: $basewhite;
+        color:$baseblack;
         padding: 15px 22px 0px 33px;
         h1{
             font-family: 'Ubuntu', sans-serif;
@@ -717,8 +1110,8 @@ li a:hover{
         width: 100%;
         height: 300px;
         margin-top: -20px;
-        background-color: $white;
-        color:$black;
+        background-color: $basewhite;
+        color:$baseblack;
         padding: 15px 22px 0px 33px;
         h1{
             font-family: 'Ubuntu', sans-serif;
@@ -741,10 +1134,10 @@ li a:hover{
 #blacksectionOne,#blacksectionTwo{
     width: 100%;
     height: 300px;
-    background-color: $black;
+    background-color: $baseblack;
     margin-top: -20px;
     padding: 45px 22px 10px 33px;
-    color: $white;
+    color: $basewhite;
 }
 #blacksectionTwo{
     height: 700px;
@@ -756,7 +1149,7 @@ li a:hover{
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 0px 0px 33px 0px;
     }
     p{
@@ -765,7 +1158,7 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     }        
 }
 .blktopblockB{
@@ -775,14 +1168,14 @@ li a:hover{
     width: 100%;
     height:auto;
     padding: 45px 22px 10px 0px;
-    color: $white;
+    color: $basewhite;
     h2{
         font-family: 'Ubuntu', sans-serif;
         font-size: 1.7em;
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 0px 0px 33px 0px;
     }
     p{
@@ -791,21 +1184,21 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     }        
 }     
 #blkbottomTwoB{
     width: 100%;
     height:auto;
     padding: 45px 22px 10px 0px;
-    color: $white;
+    color: $basewhite;
     h2{
         font-family: 'Ubuntu', sans-serif;
         font-size: 1.7em;
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 0px 0px 33px 0px;
     }
     p{
@@ -814,14 +1207,71 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     }        
 }
           
 }
 /* End of infopage */     
+
     
-/* servicepage */ 
+/* Servicepage */
+#blockCreate, #blockList{
+    h3{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: $slimgrey;
+        padding: 0px 0px 17px 0px;
+        text-transform: none;
+
+    }
+    ul.tagFirst, ul.tagLast{
+        color: $slimgrey;
+        margin-bottom: 10px;
+        list-style: none;
+        li {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1em;
+            font-weight: 200;
+            line-height: 1.64em;
+            letter-spacing: .025em;
+            color: $slimgrey;
+            list-style: none;
+            margin: 10px 0px;
+        }
+    }
+    
+}
+#blockList{
+    height:600px;
+    padding: 45px 0px 15px 73px;
+}
+#blockWA{
+    width: 100%;
+    height: auto;
+} 
+#blockWin,#blockAccord{
+    width: 100%;
+    height: 460px;
+    padding: 120px 22px 15px 33px;
+}
+    
+#blockAccord{
+   height:620px;
+}
+   
+#blockColorA, #blockColorB, #blockColorC{
+    width: 100%;
+    height: 352px;
+}
+   
+/* End of Servicepage */      
+    
+/* aboutpage */ 
 #whiteSection{
    
 }
@@ -839,7 +1289,7 @@ li a:hover{
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $black;
+        color: $baseblack;
         padding: 30px 0px 33px 10px;
     }
     p{
@@ -848,7 +1298,7 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $black;
+        color: $baseblack;
         animation-duration: 2s;
         animation-name: slideup;
     } 
@@ -869,7 +1319,7 @@ li a:hover{
     width: 300px;
     height:auto;
     padding: 4px 0px 13px 14px;
-    background-color: $black;
+    background-color: $baseblack;
     margin: 0 auto;
     h1{
         font-family: 'Ubuntu', sans-serif;
@@ -877,7 +1327,7 @@ li a:hover{
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
-        color: $white;
+        color: $basewhite;
         padding: 30px 0px 33px 10px;
     }
     p{
@@ -886,25 +1336,38 @@ li a:hover{
         font-weight: 300;
         line-height: 1.64em;
         letter-spacing: .025em;
-        color: $white;
+        color: $basewhite;
     } 
 }      
-    
-}//end of media query 
+#googleMap{
+    width: 100%;
+    height: 300px;
+    background-color: pink;
+}    
+      
+}//end of media query
 
 
-//tablet
+
+
+ 
+
+
 @media screen and (min-width: $tablet-large) {
 #wrapper{
    height: 800px;
 }
-#sideView, #nav-trigger, label[for="nav-trigger"]{
+#sideView{
+    display: none;
+}
+#mobile, #nav-trigger, label[for="nav-trigger"]{
     display: none;
 }
 #navigation{
+    display:block;
     list-style: none;
     background: #111;
-    width: 20%;
+    width: 30%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -913,19 +1376,25 @@ li a:hover{
     left: 0;
     z-index: 2;
     color: #000;
-    background-color: $white;
+    background-color: #fff;
     display:block;
-    float:left;
-    padding: 20px 20px;
+    padding: 30px 0px 0px 30px;
+    text-align: center;
     .navHolder{
-        width: 100%;
+        width: 123px;
         height: auto;
-        background-color: $white;
+        background-color: $basewhite;
+        margin-top: 45px;
         #logoHolder{
             width: 100%;
             height: auto;
             padding: 18px 0px;
         }
+    }
+    #navHolderLinks{
+        width: 123px;
+        height: auto;
+        background-color: $basewhite;
         #navi{
             width: 100%;
             list-style: none;
@@ -936,7 +1405,7 @@ li a:hover{
                 text-transform: uppercase;
                 padding: 10px 0px;
                 line-height: 49px;
-                color: $black;
+                color: $baseblack;
                 font-size: 13px;
                 letter-spacing: 0.02em;
                 font-weight: bold;
@@ -954,7 +1423,101 @@ li a:hover{
             }
         }
     }
-}// end of Nav 
+    #navHolderSoc{
+        width: 123px;
+        height: auto;
+        background-color: $basewhite;
+        margin-top: 70px;
+        #navSocial{
+            width: 100%;
+            height: 102px;
+            list-style: none;
+            padding: 0px 0px 0px 0px;
+            text-align: center;
+            li{
+                width: 30%;
+                background-color: azure;
+                height: auto;
+                display: inline;
+                margin-right: 5px;
+                li a{
+                    font-family: 'Ubuntu', sans-serif;
+                    text-transform: uppercase;
+                    padding: 10px 0px;
+                    display: inline;
+                    float: left;
+                    width: 17%;
+                    background-color: aquamarine;
+                    margin-left: 3px;
+                      
+                }
+            
+            }
+        }
+    }
+    
+    img {
+        width:14%;
+    } 
+    .nav-item{
+//        background-color: aqua;
+        width: 123px;
+    }
+}    
+//#navigation{
+//    list-style: none;
+//    background: #111;
+//    width: 20%;
+//    height: 100%;
+//    position: fixed;
+//    top: 0;
+//    right: 0;
+//    bottom: 0;
+//    left: 0;
+//    z-index: 2;
+//    color: #000;
+//    background-color: $basewhite;
+//    display:block;
+//    float:left;
+//    padding: 20px 20px;
+//    .navHolder{
+//        width: 100%;
+//        height: auto;
+//        background-color: $basewhite;
+//        #logoHolder{
+//            width: 100%;
+//            height: auto;
+//            padding: 18px 0px;
+//        }
+//        #navi{
+//            width: 100%;
+//            list-style: none;
+//            padding: 0px 0px 0px 0px;
+//            text-align: center;
+//            li a{
+//                font-family: 'Ubuntu', sans-serif;
+//                text-transform: uppercase;
+//                padding: 10px 0px;
+//                line-height: 49px;
+//                color: $baseblack;
+//                font-size: 13px;
+//                letter-spacing: 0.02em;
+//                font-weight: bold;
+//                text-align: center;
+//                   
+//            }
+//            li a:hover{
+//                text-decoration: none;
+//                background-color: #AD310B;
+//                -webkit-transition: background-color 1000ms linear;
+//                -moz-transition: background-color 1000ms linear;
+//                -o-transition: background-color 1000ms linear;
+//                -ms-transition: background-color 1000ms linear;
+//                transition: background-color 1000ms linear;
+//            }
+//        }
+//    }
+//}// end of Nav 
 .logoTitle h1{
         font-family: 'Ubuntu', sans-serif;
         font-size: 2em;
@@ -962,7 +1525,7 @@ li a:hover{
         letter-spacing: .05em;
         text-transform: uppercase;
         text-align: center;
-        color:$black;
+        color:$baseblack;
         text-decoration: none;
         
 }    
@@ -1033,8 +1596,8 @@ li a:hover{
         height: 516px;
         float:right;
         margin-top: 0px;
-        background-color: $white;
-        color:$black;
+        background-color: $basewhite;
+        color:$baseblack;
         padding: 95px 22px 0px 33px;
         h1{
             font-family: 'Ubuntu', sans-serif;
@@ -1064,8 +1627,8 @@ li a:hover{
         height: 516px;
         float:left;
         margin-top: 0px;
-        background-color: $white;
-        color:$black;
+        background-color: $basewhite;
+        color:$baseblack;
         padding: 95px 22px 0px 33px;
         h1{
             font-family: 'Ubuntu', sans-serif;
@@ -1088,10 +1651,10 @@ li a:hover{
     #blacksectionOne,#blacksectionTwo{
         width: 100%;
         height: 300px;
-        background-color: $black;
+        background-color: $baseblack;
         margin-top: -20px;
         padding: 45px 22px 10px 33px;
-        color: $white;
+        color: $basewhite;
     }
     #blacksectionTwo{
         height: 400px;
@@ -1103,7 +1666,7 @@ li a:hover{
             font-weight: 700;
             letter-spacing: .05em;
             text-transform: uppercase;
-            color: $white;
+            color: $basewhite;
             padding: 0px 0px 33px 0px;
         }
         p{
@@ -1112,7 +1675,7 @@ li a:hover{
             font-weight: 300;
             line-height: 1.64em;
             letter-spacing: .025em;
-            color: $white;
+            color: $basewhite;
         }        
     }
     .blktopblockB{
@@ -1123,14 +1686,14 @@ li a:hover{
         height:auto;
         float: left;
         padding: 45px 22px 10px 0px;
-        color: $white;
+        color: $basewhite;
         h2{
             font-family: 'Ubuntu', sans-serif;
             font-size: 1.7em;
             font-weight: 700;
             letter-spacing: .05em;
             text-transform: uppercase;
-            color: $white;
+            color: $basewhite;
             padding: 0px 0px 33px 0px;
         }
         p{
@@ -1139,7 +1702,7 @@ li a:hover{
             font-weight: 300;
             line-height: 1.64em;
             letter-spacing: .025em;
-            color: $white;
+            color: $basewhite;
         }        
     }     
     #blkbottomTwoB{
@@ -1147,14 +1710,14 @@ li a:hover{
         height:auto;
         float: right;
         padding: 45px 22px 10px 0px;
-        color: $white;
+        color: $basewhite;
         h2{
             font-family: 'Ubuntu', sans-serif;
             font-size: 1.7em;
             font-weight: 700;
             letter-spacing: .05em;
             text-transform: uppercase;
-            color: $white;
+            color: $basewhite;
             padding: 0px 0px 33px 0px;
         }
         p{
@@ -1163,7 +1726,7 @@ li a:hover{
             font-weight: 300;
             line-height: 1.64em;
             letter-spacing: .025em;
-            color: $white;
+            color: $basewhite;
         }        
     }
           
@@ -1179,32 +1742,86 @@ li a:hover{
     width:80%;
     background-color: brown;
     height: auto;
-}     
-}//end of media query 
-
-
-
-
-
-// Desktop
-@media screen and (min-width: $screen-small) {
-#containerMain{
-    #toptextHolder h1{
-        font-size: 3.2em;
-        color:whitesmoke;
-    }
-    #toptextHolder h2{
-        font-size: 1.9em;
-        color:floralwhite;
-    }
 }
-#social{
-    li{
-        li a{
-          }
+    
+/* Servicepage */
+#blockCreate, #blockList{
+    width:50%;
+//    float: left;
+    h1{
+        font-size: 1.3em;
+     }
+    h2{
+        font-size: 1em;
+     }
+    h3{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: $slimgrey;
+        padding: 0px 0px 17px 0px;
+        text-transform: none;
+
     }
-    img{
-        padding:5px 8px;
+    p{
+        font-size: .8em;
     }
-}//end of full navigation section    
+    ul.tagFirst, ul.tagLast{
+        li {
+            font-size: .8em;
+        }
+    }
+    
+}
+#blockCreate, #blockWin{
+    float: left;
+    
+}    
+#blockList, #blockAccord{
+    float: right;
+}
+#blockList h3 {
+    font-size: 1em;
+    line-height: 0px;
+    padding: 0px 0px 4px 0px;
+}
+    
+#blockWA{
+    height: 460px;
+    height: 616px;
+} 
+//#blockWin{
+//    width: 50%;
+//    height: 460px;
+//    float: left;
+//    padding: 120px 22px 15px 33px;
+//}
+//    
+//#blockAccord{
+//    width: 50%;
+//    height: 460px;
+//    float: right;
+//    padding: 120px 22px 15px 33px;
+//}
+   
+#blockColorA, #blockColorB,#blockColorC{
+    width: 33.3%;
+    height: 352px;
+    float:left;
+    display: inline-block;
+    margin: -20px 0px;
+    padding: 0px 0px 0px 0px;
+}
+   
+   
+/* End of Servicepage */    
+    
+    
+    
 }//end of media query 
+
+
+

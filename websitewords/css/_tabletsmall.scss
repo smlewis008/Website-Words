@@ -1,0 +1,348 @@
+// mobile phone 6
+// mobile phone 6
+$tablet-small: 480px;
+
+// Color Variables
+$basewhite: #fff;
+$background:#d7d7d7;
+$slimgrey: #818181;
+$baseblack:#000;
+$tan:#c4a86b;
+$contactbkgr: #F6F6F6;
+$contacth:#303030;
+$contactp:#818181;
+
+
+// Font Variables
+$ubuntu-font-stack: 'Ubuntu', sans-serif !default;
+$roboto-font-stack: 'Roboto', sans-serif !default;
+
+@media screen and (min-width: $tablet-small) {
+#wrapper{
+   height: 634px;
+}
+.mainView{
+    width:100%;
+    min-height: 100%;
+    top:0;
+    left:0;
+}
+#containerMain{
+    #toptextHolder h1{
+        font-size: 2em;
+        color:red;
+    }
+    #toptextHolder h2{
+        font-size: 1.2em;
+        color:aquamarine;
+    }
+}
+
+/* Subpages of the website */   
+#subcontainerMain{
+    #container{
+        width:100%;
+        margin: 0 auto;
+        background-color: aqua;
+    }
+    .rows,#row{
+        position: relative;
+        left: 0%;
+        background-color: brown;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    #row{
+        height: auto;
+    }
+    #rightinfoPic, #rightinfoPicTwo{
+        width: 100%;
+        height: 300px;
+        background-image: url("../img/womendesktop.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #rightinfoPicTwo{
+        background-image: url("../img/startup.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;     
+    }
+    #leftinfoWords{
+        width: 100%;
+        height: 300px;
+        margin-top: -20px;
+        background-color: $basewhite;
+        color:$baseblack;
+        padding: 15px 22px 0px 33px;
+        h1{
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            animation-duration: 3s;
+            animation-name: slideup;
+        }
+        p{
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1em;
+            line-height: 1.64em;
+            letter-spacing: .025em;
+            animation-duration: 3s;
+            animation-name: slideup;
+        }
+    }     
+    #leftinfoPic{
+        width: 100%;
+        height: 300px;
+        background-image: url("../img/working.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #rightinfoWords{
+        width: 100%;
+        height: 300px;
+        margin-top: -20px;
+        background-color: $basewhite;
+        color:$baseblack;
+        padding: 15px 22px 0px 33px;
+        h1{
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            animation-duration: 3s;
+            animation-name: slideup;
+        }
+        p{
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1em;
+            line-height: 1.64em;
+            letter-spacing: .025em;
+            animation-duration: 3s;
+            animation-name: slideup;
+        }
+    }
+#blacksectionOne,#blacksectionTwo{
+    width: 100%;
+    height: 300px;
+    background-color: $baseblack;
+    margin-top: -20px;
+    padding: 45px 22px 10px 33px;
+    color: $basewhite;
+}
+#blacksectionTwo{
+    height: 700px;
+}
+.blktopblockA{
+    h1{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $basewhite;
+        padding: 0px 0px 33px 0px;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.64em;
+        letter-spacing: .025em;
+        color: $basewhite;
+    }        
+}
+.blktopblockB{
+    display: none;
+}     
+#blkbottomTwoA{
+    width: 100%;
+    height:auto;
+    padding: 45px 22px 10px 0px;
+    color: $basewhite;
+    h2{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $basewhite;
+        padding: 0px 0px 33px 0px;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.64em;
+        letter-spacing: .025em;
+        color: $basewhite;
+    }        
+}     
+#blkbottomTwoB{
+    width: 100%;
+    height:auto;
+    padding: 45px 22px 10px 0px;
+    color: $basewhite;
+    h2{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $basewhite;
+        padding: 0px 0px 33px 0px;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.64em;
+        letter-spacing: .025em;
+        color: $basewhite;
+    }        
+}
+          
+}
+/* End of infopage */     
+
+    
+/* Servicepage */
+#blockCreate, #blockList{
+    h3{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: $slimgrey;
+        padding: 0px 0px 17px 0px;
+        text-transform: none;
+
+    }
+    ul.tagFirst, ul.tagLast{
+        color: $slimgrey;
+        margin-bottom: 10px;
+        list-style: none;
+        li {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1em;
+            font-weight: 200;
+            line-height: 1.64em;
+            letter-spacing: .025em;
+            color: $slimgrey;
+            list-style: none;
+            margin: 10px 0px;
+        }
+    }
+    
+}
+#blockList{
+    height:600px;
+    padding: 45px 0px 15px 73px;
+}
+#blockWA{
+    width: 100%;
+    height: auto;
+} 
+#blockWin,#blockAccord{
+    width: 100%;
+    height: 460px;
+    padding: 120px 22px 15px 33px;
+}
+    
+#blockAccord{
+   height:620px;
+}
+   
+#blockColorA, #blockColorB, #blockColorC{
+    width: 100%;
+    height: 352px;
+}
+   
+/* End of Servicepage */      
+    
+/* aboutpage */ 
+#whiteSection{
+   
+}
+.blockrow{
+    position: relative;
+    left: 0%;
+    width:100%;
+    background-color: brown;
+    height: auto;
+}    
+.block{
+    h1{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $baseblack;
+        padding: 30px 0px 33px 10px;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.64em;
+        letter-spacing: .025em;
+        color: $baseblack;
+        animation-duration: 2s;
+        animation-name: slideup;
+    } 
+}    
+#nextSection{
+    width: 100%;
+    height:auto;
+    background-image: url("../img/street.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 40px 0px 53px 0px;
+    margin-top: -20px;
+    margin-bottom: -10px;
+}
+#bigGrid{
+    width: 300px;
+    height:auto;
+    padding: 4px 0px 13px 14px;
+    background-color: $baseblack;
+    margin: 0 auto;
+    h1{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.7em;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $basewhite;
+        padding: 30px 0px 33px 10px;
+    }
+    p{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+        line-height: 1.64em;
+        letter-spacing: .025em;
+        color: $basewhite;
+    } 
+}      
+#googleMap{
+    width: 100%;
+    height: 300px;
+    background-color: pink;
+}    
+      
+}//end of media query

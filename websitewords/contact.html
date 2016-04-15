@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">   
+<script>
+        $(document).ready(function(){
+           $('#contactForm').fadeIn('slow'); 
+        });
+    </script> 
 </head>
 
 <body>
@@ -24,7 +29,7 @@
 <div id="wrapper">
     <!-- Navigation -->
     <div id="sideView" class="sideView">
-        <div id="mobile">
+        
             <div class="navHolder">
                     <div id="logoHolder">
                         <a href="#index.html" class="logoTitle">
@@ -52,53 +57,75 @@
                     
                 </ul>
             </div>
-        </div>
-<!--
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger"></label>
--->
-        
     </div>
     <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger"></label>
+    <label for="nav-trigger"></label>
     <div id="navigation">
-            <!-- Logo -->
-            <div class="navHolder">
-                <div id="logoHolder">
-                    <a href="#index.html" class="logoTitle">
-                        <h1>Words</h1>
-                    </a>
-                </div>
+        <!-- Logo -->
+        <div class="navHolder">
+            <div id="logoHolder">
+				<a href="#index.html" class="logoTitle">
+                    <h1>Words</h1>
+                </a>
             </div>
-            <!-- Navigation links -->
-            <div id="navHolderLinks">
-                <ul id="navi">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="info.html">Info</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <!-- Navigation social icons -->
-            <div id="navHolderSoc">
-                <ul id="navSocial">
-                    <li><a href="#"><img src="img/Facebook-Icon.png"></a></li>
-                    <li><a href="#"><img src="img/Linkedin-Icon.png"></a></li>
-                    <li><a href="#"><img src="img/Twitter-Icon.png"></a></li>
-                    <li><a href="#"><img src="img/Youtube-Icon.png"></a></li>
-                </ul>
-            </div>
-    </div>     
+        </div>
+        <!-- Navigation links -->
+        <div id="navHolderLinks">
+            <ul id="navi">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <!-- Navigation social icons -->
+        <div id="navHolderSoc">
+            <ul id="navSocial">
+                <li><a href="#"><img src="img/Facebook-Icon.png"></a></li>
+                <li><a href="#"><img src="img/Linkedin-Icon.png"></a></li>
+                <li><a href="#"><img src="img/Twitter-Icon.png"></a></li>
+                <li><a href="#"><img src="img/Youtube-Icon.png"></a></li>
+            </ul>
+        </div>
+    </div>    
     <div class="mainView">
+        <div id="subcontainerMain">
+              <div id="container">
+                  <div class="rows">
+                    <div id="locPic">
+                    </div>
+                  </div>
+                  <div class="rows">
+                    <div id="contactA">
+                            <h1>Get in touch with us</h1>
+                            <h2>Our Office</h2>
+                            <p>227  East 7th Street, Suite 391<br>
+                            New York, NY 00000<br>
+                            Email: email@domain.com</p>
+                            
+                    </div>
+                    <div id="contactB">
+                            <h2>Contact Us</h2>
+                            <div id="contactForm">
+                                <form>
+                                  <input type="text" placeholder="First Name" name="firstname"><br>
+                                 <input type="text" placeholder="Last Name" name="lastname">
+                                 <input type="text" placeholder="Email" name="email"><br>
+                                 <input type="text" placeholder="Website" name="website">
+                                 <textarea type="text" placeholder="Message" name="Message" id="Message"></textarea>
+                                 <input id="contbutton" value="Contact us">    
+                                </form>
+                            </div>    
+                    </div>  
+                  </div>
+                  <div class="rows">
+                    <div id="googleMap">
 
-      <div id="containerMain">
-          <div id="toptextHolder">
-            <h1>Design your world</h1>
-            <h2>Ideas worth bring to life </h2>
-          </div>
-     </div>
-        <!--End of Container-->
+                    </div>
+                  </div>
+              </div>
+            </div><!--End of Container-->
     </div><!--End of MainView-->
 </div><!--End of Wrapper-->
 
@@ -108,10 +135,15 @@
       
       
 
-    <!-- Bootstrap core JavaScript
+   <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>
+        $(document).ready(function(){
+           $('#contactForm').fadeIn('slow'); 
+        });
+    </script>    
 </body>
 </html>
