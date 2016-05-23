@@ -1,0 +1,40 @@
+//desktop
+//desktop
+$screen-small: 1024px;
+
+// Color Variables
+$basewhite: #fff;
+$background:#d7d7d7;
+$slimgrey: #818181;
+$baseblack:#000;
+$tan:#c4a86b;
+$contactbkgr: #F6F6F6;
+$contacth:#303030;
+$contactp:#818181;
+
+
+// Font Variables
+$ubuntu-font-stack: 'Ubuntu', sans-serif !default;
+$roboto-font-stack: 'Roboto', sans-serif !default;
+
+@media screen and (min-width: $screen-small) {
+#containerMain{
+    #toptextHolder h1{
+        font-size: 3.2em;
+        color:whitesmoke;
+    }
+    #toptextHolder h2{
+        font-size: 1.9em;
+        color:floralwhite;
+    }
+}
+#social{
+    li{
+        li a{
+          }
+    }
+    img{
+        padding:5px 8px;
+    }
+}//end of full navigation section    
+}//end of media query 

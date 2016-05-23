@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!--    <link rel="icon" href="../../favicon.ico">-->
+    <title>Words</title>
+    <!-- core CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- core Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,700|Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">   
+</head>
+
+<body>
+
+<div id="wrapper">
+    <!-- Navigation -->
+    <div id="mobile">
+            <div class="navHolder">
+                    <div id="logoHolder">
+                        <a href="#index.html" class="logoTitle">
+                            <h1>Words</h1>
+                        </a>
+                    </div>
+            </div>
+            <div id="navmobLinks">
+                <ul id="mobilelink">
+
+                    <li><a href="index.html" data-toggle="collapse" data-target=".in">Home</a></li>
+                    <li><a href="about.html" data-toggle="collapse" data-target=".in">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </div>    
+            <div id="navmobileSoc">
+                <ul id="social">
+                    <li><a href="#"><img class="sim" src="img/Facebook-Icon.png"></a></li>
+                    <li><a href="#"><img class="sim" src="img/Linkedin-Icon.png"></a></li>
+                    <li><a href="#"><img class="sim" src="img/Twitter-Icon.png"></a></li>
+                    <li><a href="#"><img class="sim" src="img/Youtube-Icon.png"></a></li>
+                    
+                </ul>
+            </div>
+    </div>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger"></label>
+    <div id="navigation">
+            <!-- Logo -->
+            <div class="navHolder">
+                <div id="logoHolder">
+                    <a href="#index.html" class="logoTitle">
+                        <h1>Words</h1>
+                    </a>
+                </div>
+            </div>
+            <!-- Navigation links -->
+            <div id="navHolderLinks">
+                <ul id="navi">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Navigation social icons -->
+            <div id="navHolderSoc">
+                <ul id="navSocial">
+                    <li><a href="#"><img src="img/Facebook-Icon.png"></a></li>
+                    <li><a href="#"><img src="img/Linkedin-Icon.png"></a></li>
+                    <li><a href="#"><img src="img/Twitter-Icon.png"></a></li>
+                    <li><a href="#"><img src="img/Youtube-Icon.png"></a></li>
+                </ul>
+            </div>
+    </div>     
+    <div class="mainView">
+
+      <div id="containerMain">
+          <div id="toptextHolder">
+            <h1>Design your world</h1>
+            <h2>Ideas worth bring to life </h2>
+          </div>
+     </div>
+        <!--End of Container-->
+    </div><!--End of MainView-->
+</div><!--End of Wrapper-->
+
+
+     
+     
+      
+      
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!-- Menujs -->
+    <script>
+        $(document).ready(function () {
+        $("mobilelink").find("li").on("click", "a", function () {
+        $('#navmobLinks.in').collapse('hide');
+            });
+        });
+    </script>
+</body>
+</html>

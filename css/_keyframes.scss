@@ -1,0 +1,86 @@
+// Keyframes
+
+/* 
+*
+* Home Page
+*
+*******************/
+@keyframes homeslide-up {
+  from {
+    margin-top: 7%;
+    opacity:0;
+  }
+
+  to {
+    margin-top: 0%;
+    opacity:1;
+  }
+}
+@keyframes typing {
+  from {
+    width:0;
+    opacity:0;  
+  }
+  to {
+    width: 16.3em;
+    opacity:1;  
+  }
+}
+/* White Section */
+@keyframes slideup {
+  from {
+    margin-top: 100%;
+    width: 100%; 
+  }
+
+  to {
+    margin-top: 0%;
+    width: 100%;
+  }
+}
+/* Black Box */
+@keyframes slidein {
+  from {
+    margin-left: 40%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+@keyframes slideintwo {
+  from {
+    margin-left: 40%;
+    width: 200%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+/* Colors */
+@keyframes fadeInColors {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }	
+}
+
+@-webkit-keyframes fadeInColors  {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
